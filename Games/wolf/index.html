@@ -1,0 +1,30 @@
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Wolfenstien</title>
+    <style type="text/css">
+      .dosbox-container { width: 640px; height: 400px; }
+      .dosbox-container > .dosbox-overlay { background: url(../img/WOLF.jpg);background-size:cover;}
+    </style>
+  </head>
+  <body bgcolor="000000">
+    <div id="dosbox"></div>
+    <br/>
+    <button onclick="dosbox.requestFullScreen();" style="background: none; border: none;"><img src="../img/large.gif"/></button>
+    <h1 style="font-family:Tahoma;color:#ffa500;">Instructions for dinguses:</h1>
+    <p style="font-family:Tahoma;color:#ffa500;">hit enter then wait a bit... then click c then wait some more... then type W then hit tab and then hit enter. then sit back and relax...</p>
+   <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+    <script type="text/javascript">
+      var dosbox = new Dosbox({
+        id: "dosbox",
+        onload: function (dosbox) {
+          dosbox.run("wolf.zip", "INSTALL.EXE");
+        },
+        onrun: function (dosbox, app) {
+          console.log("App '" + app + "' is running");
+        }
+      });
+    </script>
+  </body>
+</html>

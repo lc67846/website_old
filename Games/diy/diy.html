@@ -1,0 +1,33 @@
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>DIY</title>
+    <style type="text/css">
+      .dosbox-container { width: 640px; height: 400px; }
+      .dosbox-container > .dosbox-overlay { background: url(../img/DIY.jpg);background-size:cover;}
+    </style>
+  </head>
+  <body bgcolor="000000">
+    <div id="dosbox"></div><br/>
+    <button onclick="dosbox.requestFullScreen();" style="background: none; border: none;"><img src="../img/large.gif"/></button>
+   <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+   <script type="text/javascript">
+   		var dosbox = new Dosbox({
+   			id: "dosbox",
+   			onload: function (dosbox) {
+        var f='ERROR';
+        var n;
+        if ( location.search.match(/ftl=([^&]*)/i) ){f = location.search.match(/ftl=([^&]*)/i)[1];}
+        if ( location.search.match(/fl=([^&]*)/i) ){n = location.search.match(/fl=([^&]*)/i)[1];}
+          console.log(f+","+n);
+   				dosbox.run(decodeURIComponent(f),decodeURIComponent(n));
+   			},
+   			onrun: function (dosbox, app) {
+   				console.log("App'"+app+"'is running");
+   			}
+   		});
+      //new DataRequest(1866030, 2163950, 0, 0).open('GET', '/dosbox.conf');
+   </script>
+  </body>
+</html>

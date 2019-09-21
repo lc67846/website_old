@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insert game urls</title>
+</head>
+<body bgcolor="000000">
+	<h1 style="font-family:Tahoma;color:#ffa500;">This one's all up to you, just insert a link to a hosted zip file(I only have about 4gb so you host it yourself, your fileserver MUST accept CORS requests)</h1>
+	<input type="text" id="dminp" value="domain here" />
+  	<input type="text" id="fname" value="name of exe or com file to run here(case sensitive)" />
+  	<button onclick="h()">Load</button>
+   <script type="text/javascript">
+   	function h(){
+   		var f = encodeURIComponent(document.querySelector("#dminp").value);
+   		var n = encodeURIComponent(document.querySelector("#fname").value);
+   		console.log(f+","+n);
+   		window.location.href = './diy.html?ftl='+f+'&fl='+n;
+   	}
+   	</script>
+</body>
+</html>
